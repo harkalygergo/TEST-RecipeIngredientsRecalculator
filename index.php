@@ -21,9 +21,9 @@ class RecipeIngredientsRecalculator
 	{
 		print_r( $this->recipe_array );
 		// The “servings” is also should be integer, the program rounds down this value when recalculate the recipe.
-		if( !is_int( $this->recipe_array['ingredients'] ) )
+		if( !is_int( $this->recipe_array['servings'] ) )
 		{
-			$this->recipe_array['ingredients'] = round( $this->recipe_array['ingredients'] );
+			$this->recipe_array['servings'] = round( $this->recipe_array['servings'] );
 		}
 		foreach( $this->recipe_array['ingredients'] as $ingredients )
 		{

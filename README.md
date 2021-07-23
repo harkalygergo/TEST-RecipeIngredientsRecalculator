@@ -1,9 +1,18 @@
 # Loginet Homework
+## RecipeIngredientsRecalculator
 ##### 2021.07.23. | Harkály Gergő
 
 ## Info
 
-PHP: 7.4
+RecipeIngredientsRecalculator is a PHP 7.4 based web application, which validates and recalculates any recipe from given JSON. Example JSON is added and of this README.
+
+## Usage
+
+No need any installation, but requires PHP (recommended 7.4<) and web server (Apache / Nginx / etc.).
+
+Implement `RecipeIngredientsRecalculator` class from index.php file into your software or just include / load attached `index.php` and call `RecipeIngredientsRecalculator()` class by adding a recipe JSON as construct parameter: 
+
+`new RecipeIngredientsRecalculator( $recipeJSON );`
 
 ## Example input JSON
 
@@ -50,5 +59,3 @@ PHP: 7.4
 	]
 }
 ```
-
-# How to install
