@@ -60,10 +60,10 @@ $example_recipe_GOOD = '{
 }';
 echo "<pre>";
 print_r( $example_recipe_BAD );
-echo "<br>";
+echo "<br><br>";
 print_r( new RecipeIngredientsRecalculator( $example_recipe_BAD ) );
-echo "<br>";
+echo "<br><br>";
 print_r( $example_recipe_GOOD );
-echo "<br>";
+echo "<br><br>";
 print_r( new RecipeIngredientsRecalculator( $example_recipe_GOOD ) );
 echo "</pre>";

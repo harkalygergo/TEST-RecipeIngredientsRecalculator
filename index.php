@@ -3,7 +3,8 @@
 class RecipeIngredientsRecalculator
 {
 	private $recipe_array;
-	public function __construct( $recipeJSON )
+	// The recipe is always a JSON object
+	public function __construct( string $recipeJSON )
 	{
 		if( $this->isJson( $recipeJSON ) )
 		{
@@ -17,7 +18,7 @@ class RecipeIngredientsRecalculator
 	}
 
 	// Your task is to implement the RecalculateIngredients method, which takes the JSON data, an ingredient name or servings with amount to change as input and returns the recalculated recipe
-	public function RecalculateIngredients(): array
+	public function RecalculateIngredients(): string
 	{
 		// The “servings” is also should be integer, the program rounds down this value when recalculate the recipe.
 		if( !is_int( $this->recipe_array['servings'] ) )
@@ -38,15 +39,15 @@ class RecipeIngredientsRecalculator
 			}
 			$i++;
 		}
-		return $this->recipe_array;
+		return json_encode( $this->recipe_array, JSON_UNESCAPED_UNICODE );
 	}
 
-	protected function floatToIntRoundUp( float $float )
+	protected function floatToIntRoundUp( float $float ): int
 	{
 		return ceil( $float );
 	}
 
-	public function isJson( $string )
+	public function isJson( string $string ): bool
 	{
 		json_decode($string);
 		return json_last_error() === JSON_ERROR_NONE;
